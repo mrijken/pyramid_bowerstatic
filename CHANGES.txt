@@ -1,0 +1,41 @@
+CHANGES
+*******
+
+0.5 (unreleased)
+================
+
+- Nothing changed yet.
+
+
+0.4 (2014-11-03)
+================
+
+- Adjust to handle Morepath 0.7 API changes concerning request
+  construction.
+
+0.3 (2014-09-08)
+================
+
+- The 0.2 introduced a ``component`` method to obtain a component object
+  and thus its URL. This didn't turn out to be compatible with local
+  components, so I've changed it to ``get_component`` instead::
+
+    request.static_components.get_component('jquery').url()
+
+- Depend on version 0.4 of BowerStatic.
+
+0.2 (2014-08-28)
+================
+
+- Make available a ``static_components`` property on the request,
+  which is a BowerStatic static components object. You can use
+  this primarily to get the URL to a component, like this::
+
+    request.static_components.component('jquery').url()
+
+- Depend on version 0.3 of BowerStatic.
+
+0.1 (2014-07-07)
+================
+
+- Initial public release.

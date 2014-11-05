@@ -1,0 +1,6 @@
+CREDITS
+=======
+
+* Marc Rijken
+
+Based on more.static
