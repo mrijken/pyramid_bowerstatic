@@ -23,6 +23,11 @@ And resources can be used in views by:
     request.include(components, 'jquery')
 
 
+Resource can also be inserted in the view/template directly by using:
+
+   request.get_bowerstatic_url('myapp', 'jquery', 'jquery.js')
+
+
 .. _BowerStatic: http://bowerstatic.readthedocs.org
 
 .. _Pyramidh: http://docs.pylonsproject.org/projects/pyramid
