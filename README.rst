@@ -6,9 +6,12 @@ pyramid_bowerstatic integrates BowerStatic_ into Pyramid_.
 When create a pyramid app, make sure to include pyramid_bowerstatic and wrap the
 wgsi_app with bowerstatic:
 
-    . . .
+    ...
+    
     config.include('pyramid_bowerstatic')
-    . . .
+    
+    ...
+    
     app = pyramid_bowerstatic.bower.wrap(config.make_wsgi_app())
 
 Resources can be added to the bowerstatic repository by:
