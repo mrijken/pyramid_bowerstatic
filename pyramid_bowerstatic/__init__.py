@@ -48,8 +48,17 @@ def include(self, components, path_or_resource):
     include(path_or_resource)
 
 
+def get_bowerstatic_path(self, components_name, component_name, resource_name):
+    """
+    Returns the url of the bower resources, so it can be used manualy in a view.
+    """
+    components =  bower._component_collections[components_name]
+    return components.get_component(component_name).url() + resource_name
+
+
 def includeme(config):
     bower_config = bowerstatic_config(config.registry.settings)
     bower.publisher_signature = bower_config.get('publisher_signature')
     config.add_request_method(lambda:bower, 'bower', property=True, reify=True)
     config.add_request_method(include, 'include')
+    config.add_request_method(get_bowerstatic_path, 'get_bowerstatic_path')
