@@ -30,5 +30,5 @@ Resource can also be inserted in the view/template directly by using:
 
 .. _BowerStatic: http://bowerstatic.readthedocs.org
 
-.. _Pyramidh: http://docs.pylonsproject.org/projects/pyramid
+.. _Pyramid: http://docs.pylonsproject.org/projects/pyramid
 
