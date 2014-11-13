@@ -1,7 +1,7 @@
 CHANGES
 *******
 
-0.2 (unreleased)
+0.2 (2014-11-13)
 ================
 
 - With the release of bowestatic 0.6 it can be used as tweens.
