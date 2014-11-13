@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import inspect
 import os
+import inspect
 
 import bowerstatic
 
@@ -25,10 +26,6 @@ def get_bower():
 def create_components(name, path):
     """Convinience function for bower.components
     """
-    if not os.path.isabs(path):
-        file = inspect.stack()[1][1]
-        dir = os.path.split(file)[0]
-        path = os.path.join(dir, path)
     return bower.components(name, path)
 
 
@@ -36,6 +33,22 @@ def create_local_components(name, component_collection):
     """Convinience function for bower.local_components
     """
     return bower.local_components(name, component_collection)
+
+
+class tween_factory(object):
+    def __init__(self, handler, registry):
+        self.handler = handler
+        self.registry = registry
+
+    def __call__(self, request):
+        response = self.handler(request)
+
+        injector = bower.injector(wsgi=None)
+        publisher = bower.publisher(wsgi=None)
+
+        response = publisher.publish(request, injector.inject(request, response))
+
+        return response
 
 
 def include(self, components, path_or_resource):
@@ -59,6 +72,8 @@ def get_bowerstatic_path(self, components_name, component_name, resource_name):
 def includeme(config):
     bower_config = bowerstatic_config(config.registry.settings)
     bower.publisher_signature = bower_config.get('publisher_signature')
+
+    config.add_tween('pyramid_bowerstatic.tween_factory')
     config.add_request_method(lambda:bower, 'bower', property=True, reify=True)
     config.add_request_method(include, 'include')
     config.add_request_method(get_bowerstatic_path, 'get_bowerstatic_path')

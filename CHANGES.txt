@@ -4,7 +4,9 @@ CHANGES
 0.2 (unreleased)
 ================
 
-- Nothing changed yet.
+- With the release of bowestatic 0.6 it can be used as tweens.
+  As a consequence bower.wrap is not needed anymore. Which
+  makes it pyramid_bowerstatic easier to use.
 
 
 0.1 (2014-11-08)
