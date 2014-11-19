@@ -41,14 +41,11 @@ class tween_factory(object):
         self.registry = registry
 
     def __call__(self, request):
-        response = self.handler(request)
+        injector_handler = bowerstatic.InjectorTween(bower, self.handler)
+        publisher_handler = bowerstatic.PublisherTween(bower, injector_handler)
 
-        injector = bower.injector(wsgi=None)
-        publisher = bower.publisher(wsgi=None)
+        return publisher_handler(request)
 
-        response = publisher.publish(request, injector.inject(request, response))
-
-        return response
 
 
 def include(self, components, path_or_resource):

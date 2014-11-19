@@ -4,7 +4,8 @@ CHANGES
 0.3 (unreleased)
 ================
 
-- Nothing changed yet.
+- BowerStatic 0.7 has changed the API for tweens, which is
+  changed in version 0.3 of pyramid_bowerstatic.
 
 
 0.2 (2014-11-13)

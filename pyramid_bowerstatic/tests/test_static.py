@@ -22,7 +22,6 @@ def test_static():
     config.include('pyramid_bowerstatic')
     app = config.make_wsgi_app()
 
-#    c = Client(pyramid_bowerstatic.bower.wrap(app))
     c = Client(app)
     response = c.get('/')
 
