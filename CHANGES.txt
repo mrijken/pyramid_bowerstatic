@@ -1,7 +1,7 @@
 CHANGES
 *******
 
-0.3 (unreleased)
+0.3 (2014-11-19)
 ================
 
 - BowerStatic 0.7 has changed the API for tweens, which is
