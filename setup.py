@@ -7,7 +7,7 @@ long_description = (
     open('CHANGES.txt').read())
 
 setup(name='pyramid_bowerstatic',
-      version='0.3',
+      version='0.4.dev0',
       description="BowerStatic integration for Pyramid",
       long_description=long_description,
       author="Marc Rijken",
