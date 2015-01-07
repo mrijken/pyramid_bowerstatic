@@ -23,16 +23,16 @@ def get_bower():
     return bower
 
 
-def create_components(name, path):
+def create_components(name, path, bottom=False):
     """Convinience function for bower.components
     """
-    return bower.components(name, path)
+    return bower.components(name, path, bottom)
 
 
-def create_local_components(name, component_collection):
+def create_local_components(name, component_collection, bottom=False):
     """Convinience function for bower.local_components
     """
-    return bower.local_components(name, component_collection)
+    return bower.local_components(name, component_collection, bottom)
 
 
 class tween_factory(object):
